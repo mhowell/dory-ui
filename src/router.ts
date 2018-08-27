@@ -14,6 +14,11 @@ export default new Router({
       component: Home,
     },
     {
+      path: '/instrument-search',
+      name: 'instrument-search',
+      component: () => import(/* webpackChunkName: "instrument-search" */ './views/instrument-search.vue'),
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
