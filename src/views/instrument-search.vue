@@ -70,7 +70,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import { AgGridVue } from 'ag-grid-vue';
 import { Grid, GridOptions, ColumnController } from 'ag-grid/main';
 
-//import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+// import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
 @Component({
   components: {
@@ -79,15 +79,13 @@ import { Grid, GridOptions, ColumnController } from 'ag-grid/main';
 })
 export default class InstrumentSearch extends Vue {
 
-  private gridOptions: GridOptions = <GridOptions>{};
+  public ric: string = '';
+  public isin: string = '';
+  public exchange: string = '';
+  public securityType: string = '';
+  public sourceSystem: string = '';
 
-  ric: string = "";
-  isin: string = "";
-  exchange: string = "";
-  securityType: string = "";
-  sourceSystem: string = "";
-
-  columnDefs = [
+  public columnDefs = [
                 {headerName: 'RIC', field: 'ric'},
                 {headerName: 'ISIN', field: 'isin'},
                 {headerName: 'Exchange', field: 'exchange'},
@@ -95,19 +93,21 @@ export default class InstrumentSearch extends Vue {
                 {headerName: 'Source System', field: 'sourceSystem'},
               ];
 
-  rowData = [
+  public rowData = [
                 {ric: 'Toyota', isin: 'Celica', exchange: 'ASX', securityType: 'FUTURE', sourceSystem: 'SDS'},
                 {ric: 'Ford', isin: 'Mondeo', exchange: 'ASX', securityType: 'FUTURE', sourceSystem: 'SDS'},
-                //{make: 'Porsche', model: 'Boxter', price: 72000},
+                // {make: 'Porsche', model: 'Boxter', price: 72000},
 
             ];
+
+  private gridOptions: GridOptions = {} as GridOptions;
 
 
   constructor() {
     super();
 
-    //let eGridDiv:HTMLElement = <HTMLElement>document.querySelector('#myGrid');
-    //new Grid(eGridDiv, this.gridOptions);
+    // let eGridDiv:HTMLElement = <HTMLElement>document.querySelector('#myGrid');
+    // new Grid(eGridDiv, this.gridOptions);
   }
 
   public submit() {
