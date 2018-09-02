@@ -1,8 +1,11 @@
 <template>
   <v-container>
   <div class="instrument">
-    <h1>This is an instrument Search Page</h1>
-
+    <v-card>
+      <v-card-text>
+               <v-toolbar dark color="primary">
+                <v-toolbar-title>Instrument Search</v-toolbar-title>
+              </v-toolbar>
     <v-form>
       <v-container>
         <v-layout row wrap>
@@ -41,13 +44,16 @@
             required
           ></v-text-field>
           </v-flex>
-          <v-flex xs12 sm3>
-            <v-btn @click="submit">submit</v-btn>
-            <v-btn @click="clear">clear</v-btn>
-          </v-flex>
         </v-layout>
       </v-container>
     </v-form>
+    </v-card-text>
+                  <v-card-actions>
+                <v-spacer></v-spacer>
+             <v-btn @click="submit">submit</v-btn>
+            <v-btn @click="clear">clear</v-btn>
+              </v-card-actions>
+    </v-card>
   </div>
   <div>
     <v-container>
@@ -111,19 +117,12 @@ export default class InstrumentSearch extends Vue {
   }
 
   public submit() {
-
+    console.log('SUBMIT');
   }
 
   public clear() {
-
+    console.log('CLEAR');
   }
-  /*public columnDefs() {
-    return [
-                {headerName: 'Make', field: 'make'},
-                {headerName: 'Model', field: 'model'},
-                {headerName: 'Price', field: 'price'},
-              ];
-  }*/
 
 
 }
