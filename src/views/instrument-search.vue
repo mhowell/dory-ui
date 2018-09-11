@@ -74,7 +74,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { AgGridVue } from 'ag-grid-vue';
-import { Grid, GridOptions, ColumnController } from 'ag-grid/main';
+import { Grid, GridOptions, ColumnController } from 'ag-grid-community';
 
 // import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
